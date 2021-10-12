@@ -1,4 +1,7 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:calculator_app/provider/calculator_model.dart';
+import 'package:calculator_app/widgets/themes_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -17,12 +20,7 @@ class _HomeViewState extends State<HomeView> {
         return SafeArea(
           child: Column(
             children: [
-              TextButton(
-                onPressed: () {
-                  calculatorModel.changeTheme();
-                },
-                child: const Icon(Icons.ac_unit_sharp),
-              ),
+              ThemesWidget(),
             ],
           ),
         );

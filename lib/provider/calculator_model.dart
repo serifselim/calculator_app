@@ -7,11 +7,11 @@ ThemesConstants themesConstants = ThemesConstants();
 class CalculatorModel extends ChangeNotifier{
   ThemeData activeTheme = themesConstants.kDarkTheme;
 
-  void changeTheme (){
-    if(activeTheme == themesConstants.kLightTheme){
-      activeTheme = themesConstants.kDarkTheme;
-    }else{
+  void changeTheme (String themeType){
+    if(themeType == 'light'){
       activeTheme = themesConstants.kLightTheme;
+    }else{
+      activeTheme = themesConstants.kDarkTheme;
     }
     notifyListeners();
   }

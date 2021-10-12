@@ -10,6 +10,7 @@ class ThemesConstants {
     scaffoldBackgroundColor: kSharkColor,
     primaryColor: kSharkColor,
     accentColor: kCharadeColor,
+    buttonColor: kWhiteColor,
     textTheme: const TextTheme(
       headline1: TextStyle(
         fontWeight: FontWeight.w900,
@@ -24,6 +25,7 @@ class ThemesConstants {
     scaffoldBackgroundColor: kWhiteColor,
     primaryColor: kWhiteColor,
     accentColor: kAlabasterColor,
+    buttonColor: kSharkColor,
     textTheme: const TextTheme(
       headline1: TextStyle(
         fontWeight: FontWeight.w900,
