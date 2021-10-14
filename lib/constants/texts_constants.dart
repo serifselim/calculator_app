@@ -5,6 +5,6 @@ const kHistoryTextStyle = TextStyle(
 );
 
 const kMomentaryTextStyle = TextStyle(
-  fontSize: 45.0,
+  fontSize: 50.0,
   fontWeight: FontWeight.bold
 );

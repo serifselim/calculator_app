@@ -2,6 +2,7 @@
 
 import 'package:calculator_app/constants/colors_constants.dart';
 import 'package:calculator_app/provider/calculator_model.dart';
+import 'package:calculator_app/widgets/calculator_button.dart';
 import 'package:calculator_app/widgets/calculator_results.dart';
 import 'package:calculator_app/widgets/themes_widget.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,6 @@ class HomeView extends StatefulWidget {
   @override
   _HomeViewState createState() => _HomeViewState();
 }
-
 class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
@@ -38,48 +38,48 @@ class _HomeViewState extends State<HomeView> {
                   child: Column(
                     children: [
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          CalculatorButton(),
-                          CalculatorButton(),
-                          CalculatorButton(),
-                          CalculatorButton(),
+                          CalculatorButton('C', kTurquoiseColor),
+                          CalculatorButton('#' , kTurquoiseColor),
+                          CalculatorButton('%' , kTurquoiseColor),
+                          CalculatorButton('/' , kBurntSienna),
                         ],
                       ),
                        Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          CalculatorButton(),
-                          CalculatorButton(),
-                          CalculatorButton(),
-                          CalculatorButton(),
+                          CalculatorButton('7' , Theme.of(context).buttonColor),
+                          CalculatorButton('8' , Theme.of(context).buttonColor),
+                          CalculatorButton('9' , Theme.of(context).buttonColor),
+                          CalculatorButton('x' , kBurntSienna),
                         ],
                       ),
                        Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          CalculatorButton(),
-                          CalculatorButton(),
-                          CalculatorButton(),
-                          CalculatorButton(),
+                          CalculatorButton('4' , Theme.of(context).buttonColor),
+                          CalculatorButton('5' , Theme.of(context).buttonColor),
+                          CalculatorButton('6' , Theme.of(context).buttonColor),
+                          CalculatorButton('-' , kBurntSienna),
                         ],
                       ),
                        Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          CalculatorButton(),
-                          CalculatorButton(),
-                          CalculatorButton(),
-                          CalculatorButton(),
+                          CalculatorButton('1' , Theme.of(context).buttonColor),
+                          CalculatorButton('2' , Theme.of(context).buttonColor),
+                          CalculatorButton('3' , Theme.of(context).buttonColor),
+                          CalculatorButton('+' , kBurntSienna),
                         ],
                       ),
                        Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          CalculatorButton(),
-                          CalculatorButton(),
-                          CalculatorButton(),
-                          CalculatorButton(),
+                          CalculatorButton('R' , Theme.of(context).buttonColor),
+                          CalculatorButton('0' , Theme.of(context).buttonColor),
+                          CalculatorButton('.' , Theme.of(context).buttonColor),
+                          CalculatorButton('=' , kBurntSienna),
                         ],
                       )
                     ],
@@ -94,36 +94,4 @@ class _HomeViewState extends State<HomeView> {
   }
 }
 
-class CalculatorButton extends StatelessWidget {
-  const CalculatorButton({
-    Key? key,
-  }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(15.0),
-      child: ElevatedButton(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(
-              Theme.of(context).primaryColor),
-          padding: MaterialStateProperty.all(
-            EdgeInsets.all(15.0),
-          ),
-          shape: MaterialStateProperty.all<
-              RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(18.0),
-            ),
-          ),
-        ),
-        onPressed: null,
-        child: Text(
-          'AC',
-          style: TextStyle(
-              color: kTurquoiseColor, fontSize: 30.0),
-        ),
-      ),
-    );
-  }
-}
