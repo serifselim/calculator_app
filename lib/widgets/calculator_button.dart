@@ -8,35 +8,43 @@ class CalculatorButton extends StatelessWidget {
   final String buttonType;
   final Color buttonTextColor;
 
-  CalculatorButton(this.buttonType,this.buttonTextColor);
+  const CalculatorButton(this.buttonType,this.buttonTextColor, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(15.0),
+      margin: const EdgeInsets.all(15.0),
       child: ElevatedButton(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(
-              Theme.of(context).primaryColor),
-          padding: MaterialStateProperty.all(
-            EdgeInsets.all(15.0),
-          ),
-          shape: MaterialStateProperty.all<
-              RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(18.0),
-            ),
-          ),
-        ),
+        style: CalcButtonStyle(context),
         onPressed: (){
           Provider.of<CalculatorModel>(context, listen: false).buttonPressed(buttonType);
         },
-        child: Text(
-          buttonType,
-          style: TextStyle(
-              color: buttonTextColor, fontSize: 30.0),
-        ),
+        child: CalcButtonText(),
       ),
     );
+  }
+
+  Text CalcButtonText() {
+    return Text(
+        buttonType,
+        style: TextStyle(
+            color: buttonTextColor, fontSize: 30.0),
+      );
+  }
+
+  ButtonStyle CalcButtonStyle(BuildContext context) {
+    return ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(
+            Theme.of(context).primaryColor),
+        padding: MaterialStateProperty.all(
+          EdgeInsets.all(15.0),
+        ),
+        shape: MaterialStateProperty.all<
+            RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(18.0),
+          ),
+        ),
+      );
   }
 }

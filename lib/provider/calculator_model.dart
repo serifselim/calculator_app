@@ -12,6 +12,7 @@ class CalculatorModel extends ChangeNotifier {
   String _history = "";
   bool _isCalc = false;
 
+  // Get Variables
   String getEquationText() {
     return _equation;
   }

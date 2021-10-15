@@ -9,7 +9,6 @@ class ThemesConstants {
     primaryColor: kSharkColor,
     accentColor: kCharadeColor,
     buttonColor: kWhiteColor,
-
   );
 
   ThemeData kLightTheme = ThemeData.dark().copyWith(
@@ -18,6 +17,5 @@ class ThemesConstants {
     accentColor: kAlabasterColor,
     buttonColor: kSharkColor,
     textSelectionColor: kSharkColor
-    
   );
 }

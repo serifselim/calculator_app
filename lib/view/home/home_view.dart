@@ -32,70 +32,79 @@ class _HomeViewState extends State<HomeView> {
               SizedBox(
                 height: 20.0,
               ),
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Theme.of(context).accentColor,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(40.0),
-                        topRight: Radius.circular(40.0),
-                      )),
-                  padding: EdgeInsets.all(20.0),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          CalculatorButton('C', kTurquoiseColor),
-                          CalculatorButton('<', kTurquoiseColor),
-                          CalculatorButton('%', kTurquoiseColor),
-                          CalculatorButton('/', kBurntSienna),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          CalculatorButton('7', Theme.of(context).buttonColor),
-                          CalculatorButton('8', Theme.of(context).buttonColor),
-                          CalculatorButton('9', Theme.of(context).buttonColor),
-                          CalculatorButton('*', kBurntSienna),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          CalculatorButton('4', Theme.of(context).buttonColor),
-                          CalculatorButton('5', Theme.of(context).buttonColor),
-                          CalculatorButton('6', Theme.of(context).buttonColor),
-                          CalculatorButton('-', kBurntSienna),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          CalculatorButton('1', Theme.of(context).buttonColor),
-                          CalculatorButton('2', Theme.of(context).buttonColor),
-                          CalculatorButton('3', Theme.of(context).buttonColor),
-                          CalculatorButton('+', kBurntSienna),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          CalculatorButton('R', Theme.of(context).buttonColor),
-                          CalculatorButton('0', Theme.of(context).buttonColor),
-                          CalculatorButton('.', Theme.of(context).buttonColor),
-                          CalculatorButton('=', kBurntSienna),
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-              ),
+              CalcButtonsWidget(context),
             ],
           ),
         );
       },
     );
+  }
+
+  // ignore: non_constant_identifier_names
+  Expanded CalcButtonsWidget(BuildContext context) {
+    return Expanded(
+              child: Container(
+                decoration: CalcButtonsWidgetDecoration(context),
+                padding: EdgeInsets.all(20.0),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        CalculatorButton('C', kTurquoiseColor),
+                        CalculatorButton('<', kTurquoiseColor),
+                        CalculatorButton('%', kTurquoiseColor),
+                        CalculatorButton('/', kBurntSienna),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        CalculatorButton('7', Theme.of(context).buttonColor),
+                        CalculatorButton('8', Theme.of(context).buttonColor),
+                        CalculatorButton('9', Theme.of(context).buttonColor),
+                        CalculatorButton('*', kBurntSienna),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        CalculatorButton('4', Theme.of(context).buttonColor),
+                        CalculatorButton('5', Theme.of(context).buttonColor),
+                        CalculatorButton('6', Theme.of(context).buttonColor),
+                        CalculatorButton('-', kBurntSienna),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        CalculatorButton('1', Theme.of(context).buttonColor),
+                        CalculatorButton('2', Theme.of(context).buttonColor),
+                        CalculatorButton('3', Theme.of(context).buttonColor),
+                        CalculatorButton('+', kBurntSienna),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        CalculatorButton('R', Theme.of(context).buttonColor),
+                        CalculatorButton('0', Theme.of(context).buttonColor),
+                        CalculatorButton('.', Theme.of(context).buttonColor),
+                        CalculatorButton('=', kBurntSienna),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            );
+  }
+
+  BoxDecoration CalcButtonsWidgetDecoration(BuildContext context) {
+    return BoxDecoration(
+                  color: Theme.of(context).accentColor,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(40.0),
+                    topRight: Radius.circular(40.0),
+                  ));
   }
 }
