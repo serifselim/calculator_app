@@ -1,4 +1,4 @@
-# calculator_app
+# Calculator App Example With Flutter
 
 <img src="https://cdn.discordapp.com/attachments/849916105144139807/898565758198628412/calc_png.png" alt="serifselim" />
 
