@@ -21,7 +21,7 @@ class CalculatorResults extends StatelessWidget {
           Text(
             historyText,
             style: TextStyle(
-              fontSize: 15.0,
+              fontSize: 19.0,
               color: Theme.of(context).buttonColor,
             ),
           ),

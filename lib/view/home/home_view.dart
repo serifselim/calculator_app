@@ -14,6 +14,7 @@ class HomeView extends StatefulWidget {
   @override
   _HomeViewState createState() => _HomeViewState();
 }
+
 class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
@@ -33,53 +34,58 @@ class _HomeViewState extends State<HomeView> {
               ),
               Expanded(
                 child: Container(
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).accentColor,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(40.0),
+                        topRight: Radius.circular(40.0),
+                      )),
                   padding: EdgeInsets.all(20.0),
-                  color: Theme.of(context).accentColor,
                   child: Column(
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           CalculatorButton('C', kTurquoiseColor),
-                          CalculatorButton('<' , kTurquoiseColor),
-                          CalculatorButton('%' , kTurquoiseColor),
-                          CalculatorButton('/' , kBurntSienna),
+                          CalculatorButton('<', kTurquoiseColor),
+                          CalculatorButton('%', kTurquoiseColor),
+                          CalculatorButton('/', kBurntSienna),
                         ],
                       ),
-                       Row(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          CalculatorButton('7' , Theme.of(context).buttonColor),
-                          CalculatorButton('8' , Theme.of(context).buttonColor),
-                          CalculatorButton('9' , Theme.of(context).buttonColor),
-                          CalculatorButton('*' , kBurntSienna),
+                          CalculatorButton('7', Theme.of(context).buttonColor),
+                          CalculatorButton('8', Theme.of(context).buttonColor),
+                          CalculatorButton('9', Theme.of(context).buttonColor),
+                          CalculatorButton('*', kBurntSienna),
                         ],
                       ),
-                       Row(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          CalculatorButton('4' , Theme.of(context).buttonColor),
-                          CalculatorButton('5' , Theme.of(context).buttonColor),
-                          CalculatorButton('6' , Theme.of(context).buttonColor),
-                          CalculatorButton('-' , kBurntSienna),
+                          CalculatorButton('4', Theme.of(context).buttonColor),
+                          CalculatorButton('5', Theme.of(context).buttonColor),
+                          CalculatorButton('6', Theme.of(context).buttonColor),
+                          CalculatorButton('-', kBurntSienna),
                         ],
                       ),
-                       Row(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          CalculatorButton('1' , Theme.of(context).buttonColor),
-                          CalculatorButton('2' , Theme.of(context).buttonColor),
-                          CalculatorButton('3' , Theme.of(context).buttonColor),
-                          CalculatorButton('+' , kBurntSienna),
+                          CalculatorButton('1', Theme.of(context).buttonColor),
+                          CalculatorButton('2', Theme.of(context).buttonColor),
+                          CalculatorButton('3', Theme.of(context).buttonColor),
+                          CalculatorButton('+', kBurntSienna),
                         ],
                       ),
-                       Row(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          CalculatorButton('R' , Theme.of(context).buttonColor),
-                          CalculatorButton('0' , Theme.of(context).buttonColor),
-                          CalculatorButton('.' , Theme.of(context).buttonColor),
-                          CalculatorButton('=' , kBurntSienna),
+                          CalculatorButton('R', Theme.of(context).buttonColor),
+                          CalculatorButton('0', Theme.of(context).buttonColor),
+                          CalculatorButton('.', Theme.of(context).buttonColor),
+                          CalculatorButton('=', kBurntSienna),
                         ],
                       )
                     ],
@@ -93,5 +99,3 @@ class _HomeViewState extends State<HomeView> {
     );
   }
 }
-
-
