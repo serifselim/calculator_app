@@ -6,15 +6,18 @@ import 'package:math_expressions/math_expressions.dart';
 ThemesConstants themesConstants = ThemesConstants();
 
 class CalculatorModel extends ChangeNotifier {
-  ThemeData activeTheme = themesConstants.kDarkTheme;
+  ThemeData _activeTheme = themesConstants.kDarkTheme;
   String _equation = "0";
   String _expression = "";
-  String _result = "";
   String _history = "";
-  bool isCalc = false;
+  bool _isCalc = false;
 
   String getEquationText() {
     return _equation;
+  }
+
+  ThemeData getActiveTheme(){
+    return _activeTheme;
   }
 
   String getHistoryText() {
@@ -24,22 +27,22 @@ class CalculatorModel extends ChangeNotifier {
   void buttonPressed(value) {
     switch (value) {
       case '<':
-        delete();
+        _delete();
         break;
       case 'C':
-        clear();
+        _clear();
         break;
       case '=':
-        calc();
+        _calc();
         break;
       default:
-        add(value);
+        _add(value);
     }
 
     notifyListeners();
   }
 
-  void calc() {
+  void _calc() {
     _history = _equation;
     _expression = _equation;
     _expression = _expression.replaceAll('×', '*');
@@ -53,10 +56,10 @@ class CalculatorModel extends ChangeNotifier {
     } catch (e) {
       _equation = "Error";
     }
-    isCalc = true;
+    _isCalc = true;
   }
 
-  void delete() {
+  void _delete() {
     if (_equation.length > 1) {
       _equation = _equation.substring(0, _equation.length - 1);
     } else {
@@ -64,23 +67,23 @@ class CalculatorModel extends ChangeNotifier {
     }
   }
 
-  void clear() {
+  void _clear() {
     _equation = "0";
     _history = '';
-    isCalc = false;
+    _isCalc = false;
   }
 
-  void add(value) {
-    if (value != '%' || value != 'R') {
+  void _add(value) {
+    if (value != '%' && value != 'R') {
       if (_equation == '0') {
         _equation = value;
       } else {
-        if (!isCalc) {
+        if (!_isCalc) {
           _equation += value;
         } else {
           _equation = _history + value;
           _history = '';
-          isCalc = false;
+          _isCalc = false;
         }
       }
     }
@@ -88,9 +91,9 @@ class CalculatorModel extends ChangeNotifier {
 
   void changeTheme(String themeType) {
     if (themeType == 'light') {
-      activeTheme = themesConstants.kLightTheme;
+      _activeTheme = themesConstants.kLightTheme;
     } else {
-      activeTheme = themesConstants.kDarkTheme;
+      _activeTheme = themesConstants.kDarkTheme;
     }
     notifyListeners();
   }

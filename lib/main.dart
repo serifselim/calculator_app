@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      theme: Provider.of<CalculatorModel>(context).activeTheme,
+      theme: Provider.of<CalculatorModel>(context).getActiveTheme(),
       home: Scaffold(
         body: HomeView(),
       ),
