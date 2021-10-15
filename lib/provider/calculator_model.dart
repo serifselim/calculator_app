@@ -17,7 +17,7 @@ class CalculatorModel extends ChangeNotifier {
     return _equation;
   }
 
-  String getHistoryText(){
+  String getHistoryText() {
     return _history;
   }
 
@@ -39,7 +39,7 @@ class CalculatorModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void calc(){
+  void calc() {
     _history = _equation;
     _expression = _equation;
     _expression = _expression.replaceAll('×', '*');
@@ -66,19 +66,22 @@ class CalculatorModel extends ChangeNotifier {
 
   void clear() {
     _equation = "0";
+    _history = '';
+    isCalc = false;
   }
 
   void add(value) {
-    if (_equation == '0') {
-      _equation = value;
-    } else {
-      if(!isCalc){
-        _equation += value;
-      }else{
-        _history += value;
-        _equation = _history;
-        _history = ''; 
-        isCalc = false;
+    if (value != '%' || value != 'R') {
+      if (_equation == '0') {
+        _equation = value;
+      } else {
+        if (!isCalc) {
+          _equation += value;
+        } else {
+          _equation = _history + value;
+          _history = '';
+          isCalc = false;
+        }
       }
     }
   }
