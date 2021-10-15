@@ -41,7 +41,7 @@ class _HomeViewState extends State<HomeView> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           CalculatorButton('C', kTurquoiseColor),
-                          CalculatorButton('#' , kTurquoiseColor),
+                          CalculatorButton('<' , kTurquoiseColor),
                           CalculatorButton('%' , kTurquoiseColor),
                           CalculatorButton('/' , kBurntSienna),
                         ],
@@ -52,7 +52,7 @@ class _HomeViewState extends State<HomeView> {
                           CalculatorButton('7' , Theme.of(context).buttonColor),
                           CalculatorButton('8' , Theme.of(context).buttonColor),
                           CalculatorButton('9' , Theme.of(context).buttonColor),
-                          CalculatorButton('x' , kBurntSienna),
+                          CalculatorButton('*' , kBurntSienna),
                         ],
                       ),
                        Row(

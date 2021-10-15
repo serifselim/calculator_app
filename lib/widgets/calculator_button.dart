@@ -1,11 +1,12 @@
+import 'package:calculator_app/provider/calculator_model.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CalculatorButton extends StatelessWidget {
   
 
   final String buttonType;
   final Color buttonTextColor;
-  // final VoidCallback callback;
 
   CalculatorButton(this.buttonType,this.buttonTextColor);
 
@@ -27,7 +28,9 @@ class CalculatorButton extends StatelessWidget {
             ),
           ),
         ),
-        onPressed: null,
+        onPressed: (){
+          Provider.of<CalculatorModel>(context, listen: false).buttonPressed(buttonType);
+        },
         child: Text(
           buttonType,
           style: TextStyle(
